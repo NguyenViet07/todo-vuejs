@@ -1,18 +1,18 @@
 <template>
 
-<div>
+<div >
   <h1>My To do list</h1>
 
   <div class="submit-form">
     <form class="header" >
-      <input type="text" placeholder="Tiêu đề" v-model="todo.name" name="name">
+      <input type="text" placeholder="Tiêu đề" v-model="todo.name" name="name" required>
       <br>
       <br>
       <input type="text"  placeholder="Nội dung công việc" id="description"
-             required v-model="todo.description" name="description" >
+             v-model="todo.description" name="description" >
       <br>
 
-      <select  class="form-control form-control-lg"  v-model="todo.rank" >
+      <select  class="form-control form-control-lg"  v-model="todo.rank" required title="Vui lòng chọn độ ưu tiên">
         <option value=""> -- Chọn mức độ ưu tiên cho công việc -- </option>
         <option value="-1">Thấp</option>
         <option value="0">Trung bình</option>
@@ -24,7 +24,7 @@
     <br>
   </div>
 
-  <div>
+  <div class="router-link" >
     <router-link to="/search" type="button" class="btn btn-outline-info" >Tìm kiếm</router-link>
     <router-link to="/todos" type="button" class="btn btn-outline-secondary"  > All </router-link>
     <router-link to="/hight" type="button" class="btn btn-outline-danger"  >Cao</router-link>
